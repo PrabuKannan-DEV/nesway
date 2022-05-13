@@ -3,9 +3,11 @@
     <div class="container">
         <div class="row d-flex justify-content-end">
         </div>
-        <div class="card">
+        <div class="card m-5">
             <div class="card-header d-flex justify-content-between">
-                Contacts
+                <h4>
+                    Contacts
+                </h4>
                 <div class="">
                     <a href="{{ route('contacts.create') }}" class="btn btn-sm btn-primary">New</a>
                     <a href="{{ route('contacts.import') }}" class="btn btn-sm btn-primary">Import</a>
@@ -16,6 +18,7 @@
                 <table class="table table-dark">
                     <thead>
                         <tr>
+                            <td>Sno</td>
                             <td>Name</td>
                             <td>Last Name</td>
                             <td>Phone</td>
@@ -26,6 +29,7 @@
                     <tbody>
                         @foreach ($contacts as $contact)
                             <tr>
+                                <td>{{$loop->iteration}}</td>
                                 <td>{{ $contact->name }}</td>
                                 <td>{{ $contact->last_name }}</td>
                                 <td>{{ $contact->phone }}</td>
